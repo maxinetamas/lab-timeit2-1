@@ -71,31 +71,33 @@ For each cell in the table below:
 Modify the command above for the corresponding search function and value of `n`;
 measure the runtime and enter it into the table.
 
-|                | `sequential_search_itr`   | `binary_search_rec`   |
+NOTE: switched binary_search_rec and sequential_search_itr columns
+
+|                | `binary_search_rec`       |`sequential_search_itr |
 | -------------- | ------------------------- | --------------------- | 
-| `n=2**0`       |                           |                       |
-| `n=2**1`       |                           |                       |
-| `n=2**2`       |                           |                       |
-| `n=2**3`       |                           |                       |
-| `n=2**4`       |                           |                       |
-| `n=2**5`       |                           |                       |
-| `n=2**6`       |                           |                       |
-| `n=2**7`       |                           |                       |
-| `n=2**8`       |                           |                       |
-| `n=2**9`       |                           |                       |
-| `n=2**10`      |                           |                       |
-| `n=2**11`      |                           |                       |
-| `n=2**12`      |                           |                       |
-| `n=2**13`      |                           |                       |
-| `n=2**14`      |                           |                       |
-| `n=2**15`      |                           |                       |
-| `n=2**16`      |                           |                       |
-| `n=2**17`      |                           |                       |
-| `n=2**18`      |                           |                       |
-| `n=2**19`      |                           |                       |
-| `n=2**20`      |                           |                       |
-| `n=2**21`      |                           |                       |
-| `n=2**22`      |                           |                       |
+| `n=2**0`       |0.725 usec per loop        |0.142 usec per loop    |
+| `n=2**1`       |0.936 usec per loop        |0.175 usec per loop    |
+| `n=2**2`       |1.2 usec per loop          |0.26 usec per loop     |
+| `n=2**3`       |1.04 usec per loop         |0.383 usec per loop    |
+| `n=2**4`       |1.27 usec per loop         |0.556 usec per loop    |
+| `n=2**5`       |1.5 usec per loop          |0.874 usec per loop    |
+| `n=2**6`       |1.67 usec per loop         |1.47 usec per loop     |
+| `n=2**7`       |2.03 usec per loop         |2.64 usec per loop     |
+| `n=2**8`       |2.47 usec per loop         |5.01 usec per loop     |
+| `n=2**9`       |2.67 usec per loop         |9.21 usec per loop     |
+| `n=2**10`      |2.94 usec per loop         |18.1 usec per loop     |
+| `n=2**11`      |3.21 usec per loop         |35.7 usec per loop     |
+| `n=2**12`      |3.37 usec per loop         |73.5 usec per loop     |
+| `n=2**13`      |3.53 usec per loop         |150 usec per loop      |
+| `n=2**14`      |3.74 usec per loop         |293 usec per loop      |
+| `n=2**15`      |4.13 usec per loop         |583 usec per loop      |
+| `n=2**16`      |4.31 usec per loop         |1.17 msec per loop     |
+| `n=2**17`      |4.26 usec per loop         |2.31 msec per loop     |
+| `n=2**18`      |4.46 usec per loop         |4.64 msec per loop     |
+| `n=2**19`      |4.78 usec per loop         |10.1 msec per loop     |
+| `n=2**20`      |4.98 usec per loop         |19.4 msec per loop     |
+| `n=2**21`      |5.5 usec per loop          |40.1 msec per loop     |
+| `n=2**22`      |6.28 usec per loop         |80.8 msec per loop     |
 
 > **HINT:**
 > You don't have to run all of these tests manually.
@@ -225,14 +227,16 @@ For each cell in the table below:
 Modify the command above for the corresponding search function and container type;
 measure the runtime and enter it into the table.
 
-|                            | `array`  | `list`  | `tuple`     | `deque`       |
+NOTE: switched tuple and array columns
+
+|                            | `tuple`  | `list`  | `array'     | `deque`       |
 | -------------------------- | ---------| --------|------------ | ------------- |
-| `sequential_search_itr`    |          |         |             |               |
-| `sequential_search_itr2`   |          |         |             |               |
+| `sequential_search_itr`    |0.104 usec|1.22 msec|8.61 msec    |0.102 usec     |
+| `sequential_search_itr2`   |0.205 usec|2.5 msec |11 msec      |0.232 usec     |
 | `sequential_search_rec`    |  ---     | ---     |  ---        |  ---          |
-| `binary_search_itr`        |          |         |             |               |
-| `binary_search_rec`        |          |         |             |               |
-| `binary_search_rec2`       |          |         |             |  ---          |
+| `binary_search_itr`        |0.116 usec|2.61 usec|9.35 usec    |0.114 usec     |
+| `binary_search_rec`        |0.166 usec|3.95 usec|11.5 usec    |0.175 usec     |
+| `binary_search_rec2`       |0.119 usec|429 usec |9.53 usec    |  ---          |
 
 You should notice that:
 1. for the `array` container, all implementations of binary search work well
